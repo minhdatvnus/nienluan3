@@ -3,12 +3,10 @@
 \usepackage[utf8]{vietnam}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{times}
-\usepackage{type1cm}
 \usepackage{graphicx}
-\graphicspath{{images/android-studio-setup/}{images/jdk-setup/} {images/genymotion-setup/}}
+\graphicspath{{images/android-studio-setup/}{images/jdk-setup/}{images/genymotion-setup/}}
 \usepackage{subfig}
 \usepackage[unicode,hidelinks=true]{hyperref}
-%\usepackage[unicode]{hyperref}
 \usepackage{indentfirst}
 \usepackage{array}
 \usepackage{listings}
@@ -18,19 +16,17 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage[left=1in,right=1in,top=1in,bottom=2cm]{geometry}
+
 \usepackage{tikz}
 \usetikzlibrary{arrows, decorations.markings, calc, fadings, decorations.pathreplacing, patterns, decorations.pathmorphing, positioning, decorations.shapes}
-
-\tikzset{decorate sep/.style 2 args=
-{decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
-
+\tikzset{decorate sep/.style 2 args={decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
 \definecolor{tdkgreen}{RGB}{0,100,0}
+
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-
 \lstset{frame=tb,
-  %language=C,
+  %language=Java,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -44,7 +40,7 @@
   breaklines=true,
   captionpos=t,
   breakatwhitespace=true,
-  tabsize=2
+  tabsize=1
 }
 
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc
@@ -55,23 +51,7 @@
   {}% <numberless-entry-format>
   {\bfseries\hfill\contentspage}% <filler-page-format>
 
-\setcounter{tocdepth}{3} % Them subsubsection vao muc luc - http://tex.stackexchange.com/questions/146304/subsubsection-in-a-report-style-document
-\setcounter{secnumdepth}{3} % Them subsubsection vao lop report - http://tex.stackexchange.com/questions/42161/numbering-subsubsection-in-report-class
-\everymath{\displaystyle}
 \renewcommand{\arraystretch}{1.3}
-%\renewcommand{baselinestretch}{2.0}
-\renewcommand{\lstlistingname}{Ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}
-\renewcommand{\lstlistlistingname}{Danh s\IeC {\'a}ch ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}
-%http://tex.stackexchange.com/questions/64839/how-to-change-listing-caption
-
-%%\usepackage{fancyhdr}
-%%\pagestyle{fancy}
-		%\fancyfoot[LE,RO]{\thepage}
-%%\fancyhf{}
-		%\rhead{}
-%%\lhead{\emph{Đề tài: Tìm hiểu thư viện đồ họa OpenGL và Viết ứng dụng}}
-%%\renewcommand{\headrulewidth}{0.75pt}
-%%\cfoot{\thepage}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -89,13 +69,12 @@
 
 \listoftables
 
-%\lstlistoflistings
-
 %%----------------------------------------------------------------------------------------------------------------------------------%%
 %%----------------------------------------------------------------------------------------------------------------------------------%%	
 \newpage
 
 \pagenumbering{arabic}
+%%-------------------------------------------------------------------------------------------------------------------------------------%%\\
 %%-------------------------------------------------------------------------------------------------------------------------------------%%
 \chapter{Giới thiệu}
 \section{Đặt vấn đề}
@@ -119,6 +98,7 @@
 		\end{itemize}
 	
 	Trong phạm vi đề tài niên luận, nhóm chúng em tìm hiểu về cách sử dụng thư viện đồ họa OpenGL thông qua thư viện OpenGL ES 2.0, một phiên bản dành cho hệ thống nhúng, tiêu biểu là thiết bị di động sử dụng hệ điều hành Android.
+
 \section{Mục tiêu}
 	Trong quá trình thực hiện niên luận về đề tài ``\emph{Tìm hiểu về thư viện đồ họa OpenGL}'', mục tiêu chúng em đề ra để đạt được là:
 		\begin{itemize}
@@ -132,26 +112,27 @@
 \section{Phương pháp thực hiện}
 	\begin{itemize}
 		\item Nội dung và phương pháp thực hiện niên luận của nhóm được trình bày tóm tắt trong bảng~\ref{Tab:phuong-phap-thuc-hien-nien-luan}.
-	\begin{table}[!h]
-		\begin{center}
-			\begin{tabular}{|c|p{9.5cm}|>{\centering\arraybackslash}p{4.5cm}|} \hline
-			\textit{STT} & \centering{\textit{Nhiệm vụ}} & \textit{Công cụ} \\ \hline			
-			\multirow{2}{.25cm}{1} & \multirow{2}{9.5cm}{Cài đặt môi trường lập trình OpenGL trên Android} & \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}, \href{https://developer.android.com/studio/index.html}{Android Studio}, \href{https://www.genymotion.com}{Genymotion}\\ \hline
-			2 & Tìm hiểu lý thuyết về OpenGL ES 2.0 trên Android & \href{https://www.khronos.org/opengles/sdk/docs/man/}{OpenGL ES 2.0}\\ \hline
-			\multirow{2}{.25cm}{3} & \multirow{2}{9.5cm}{Thực hành một số lệnh cơ bản của OpenGL ES 2.0 trên Android} & \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}, \href{https://developer.android.com/studio/index.html}{Android Studio}, \href{https://www.genymotion.com}{Genymotion}\\ \hline
-			4 & Quản lý mã nguồn chương trình với Git & \href{https://git-scm.com/}{Git} và \href{https://github.com/}{GitHub}\\ \hline
-			\multirow{2}{.25cm}{5} &  \multirow{2}{9.5cm}{Viết báo cáo hoàn thành niên luận} & \LaTeX{} với \TeX{}Maker và \TeX{}Live\\ \hline
-		\end{tabular}
-		\end{center}
-		\caption{Phương pháp thực hiện niên luận}
-		\label{Tab:phuong-phap-thuc-hien-nien-luan}
-	\end{table}
+			\begin{table}[!h]
+				\begin{center}
+					\begin{tabular}{|c|p{9.5cm}|>{\centering\arraybackslash}p{4.5cm}|} \hline
+						\textit{STT} & \centering{\textit{Nhiệm vụ}} & \textit{Công cụ} \\ \hline			
+						\multirow{2}{.25cm}{1} & \multirow{2}{9.5cm}{Cài đặt môi trường lập trình OpenGL trên Android} & \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}, \href{https://developer.android.com/studio/index.html}{Android Studio}, \href{https://www.genymotion.com}{Genymotion}\\ \hline
+						2 & Tìm hiểu lý thuyết về OpenGL ES 2.0 trên Android & \href{https://www.khronos.org/opengles/sdk/docs/man/}{OpenGL ES 2.0}\\ \hline
+						\multirow{2}{.25cm}{3} & \multirow{2}{9.5cm}{Thực hành một số lệnh cơ bản của OpenGL ES 2.0 trên Android} & \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}, \href{https://developer.android.com/studio/index.html}{Android Studio}, \href{https://www.genymotion.com}{Genymotion}\\ \hline
+						4 & Quản lý mã nguồn chương trình với Git & \href{https://git-scm.com/}{Git} và \href{https://github.com/}{GitHub}\\ \hline
+						\multirow{2}{.25cm}{5} &  \multirow{2}{9.5cm}{Viết báo cáo hoàn thành niên luận} & \LaTeX{} với \TeX{}Maker và \TeX{}Live\\ \hline
+					\end{tabular}
+				\end{center}
+				\caption{Phương pháp thực hiện niên luận}
+				\label{Tab:phuong-phap-thuc-hien-nien-luan}
+			\end{table}
 	
 	\item Toàn bộ mã nguồn của bài báo cáo được đưa lên GitHub với địa chỉ:  
 	
-	\url{https://github.com/minhdatvnus/nienluan3}
-
+		\url{https://github.com/minhdatvnus/nienluan3}
 \end{itemize}
+
+%%-------------------------------------------------------------------------------------------------------------------------------------%%
 %%-------------------------------------------------------------------------------------------------------------------------------------%%
 \chapter{Cài đặt môi trường lập trình}
 \section{Ngôn ngữ lập trình Java}
@@ -162,10 +143,12 @@
 	Do phạm vi đề tài, nhóm chúng em không đi sâu vào trình bày về ngôn ngữ lập trình Java. Cú pháp các lệnh của ngôn ngữ Java sẽ được giải thích trong các ví dụ khi sử dụng OpenGL trên Android.\\
 	
 	Chúng ta có thể biên dịch chương trình viết bằng Java trên website: \href{http://browxy.com/}{browxy.com}.
+
 \section{Các phần mềm cần thiết}
 	Cần thực hiện cài đặt các phần mềm sau:
 	\begin{itemize}
 		\item Phần mềm \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}: tạo máy ảo Java, dùng biên dịch mã nguồn viết bằng Java.
+
 		\item Phần mềm \href{https://developer.android.com/studio/index.html}{Android Studio}: công cụ lập trình Android.
 		
 		\item Phần mềm \href{https://www.genymotion.com/}{Genymotion}: phần mềm giả lập điện thoại trên máy tính.
@@ -184,7 +167,7 @@
 					\begin{figure}[!h]
 						\vspace{-.5cm}
 						\begin{center}
-								\includegraphics[scale=1]{setup-JDK-1.png}
+							\includegraphics[scale=1]{setup-JDK-1.png}
 						\end{center}
 						\vspace{-.5cm}
 						\caption{Xác nhận đồng ý điều khoản tải JDK về máy}
@@ -242,7 +225,7 @@
 					\end{figure}
 			\end{itemize}
 
-\newpage			
+		\newpage			
 		\item \textit{Bước 3:} Thiết lập giá trị cho biến \verb|JAVA_HOME|.
 			\begin{itemize}
 				\item Lấy đường dẫn cài đặt JDK: ví dụ đường dẫn là \verb|C:\Program Files\Java| \verb|\jdk1.8.0_111| (lưu ý là đi đến thư mục \verb|jdk1.8.0_111| như hình~\ref{Fig:local-jdk}).
@@ -314,9 +297,9 @@
 			\begin{itemize}
 				\item Truy cập vào địa chỉ: \url{https://developer.android.com/studio/index.html}, được giao diện như hình~\ref{Fig:setup-android-1}. Chọn \verb|DOWNLOAD ANDROID| \verb|STUDIO|.				
 					\begin{figure}[!h]						
-							\begin{center}
-								\includegraphics[scale=0.35]{images/android-studio-setup/setup-android-1.png}
-							\end{center}
+						\begin{center}
+							\includegraphics[scale=0.35]{images/android-studio-setup/setup-android-1.png}
+						\end{center}
 						\caption{Download Android Studio từ trang chủ}
 						\label{Fig:setup-android-1}
 					\end{figure}
@@ -352,7 +335,7 @@
 						\vspace{-1cm}
 					\end{figure}
 
-\newpage					
+				\newpage
 				\item Giao diện mới xuất hiện như hình~\ref{Fig:as-2}. Chọn \verb|Next|.
 				
 				\item Được giao diện như hình~\ref{Fig:as-3}: để như mặc định, chọn \verb|Next|.
@@ -402,33 +385,33 @@
 		\item \textit{Bước 3:} Cài đặt \verb|Android Studio Wizard|.
 			\begin{figure}[!h]
 				\vspace{-.6cm}
-						\begin{center}
-							\subfloat[Chọn OK\label{Fig:as-8}]
-								{\includegraphics[scale=.63]{as-8.png}}
-								\hspace{.5cm}
-							\subfloat[Chọn Next\label{Fig:as-9}]
-								{\includegraphics[scale=.35]{as-9.png}}\\
-							\subfloat[Chọn Next\label{Fig:as-10}]
-								{\includegraphics[scale=.35]{as-10.png}}
-								\hspace{.5cm}
-								\subfloat[Chọn Finish\label{Fig:as-11}]
-								{\includegraphics[scale=.35]{as-11.png}}\\
-							\subfloat[Chọn Finish\label{Fig:as-12}]
-								{\includegraphics[scale=.35]{as-12.png}}
-							\hspace{.5cm}
-							\subfloat[Mở Android Studio lần đầu tiên\label{Fig:as-13}]
-								{\includegraphics[scale=.43]{as-13.png}}
-							
-						\end{center}
-						\vspace{-.5cm}
-						\caption{Cài đặt Android Studio Wizard}
-						\label{Fig:setup-android-studio-wizard-window}
-						\vspace{-1.25cm}
-					\end{figure}
+				\begin{center}
+					\subfloat[Chọn OK\label{Fig:as-8}]
+						{\includegraphics[scale=.63]{as-8.png}}
+						\hspace{.5cm}
+					\subfloat[Chọn Next\label{Fig:as-9}]
+						{\includegraphics[scale=.35]{as-9.png}}\\
+					\subfloat[Chọn Next\label{Fig:as-10}]
+						{\includegraphics[scale=.35]{as-10.png}}
+						\hspace{.5cm}
+					\subfloat[Chọn Finish\label{Fig:as-11}]
+						{\includegraphics[scale=.35]{as-11.png}}\\
+					\subfloat[Chọn Finish\label{Fig:as-12}]
+						{\includegraphics[scale=.35]{as-12.png}}
+						\hspace{.5cm}
+					\subfloat[Mở Android Studio lần đầu tiên\label{Fig:as-13}]
+						{\includegraphics[scale=.43]{as-13.png}}						
+				\end{center}
+				\vspace{-.5cm}
+				\caption{Cài đặt Android Studio Wizard}
+				\label{Fig:setup-android-studio-wizard-window}
+				\vspace{-1.25cm}
+			\end{figure}
+	
 			\begin{itemize}
 				\item Sau khi cài đặt \verb|Android Studio| và \verb|Android SDK| xong, xuất hiện thông báo như hình~\ref{Fig:as-8}. Nếu chưa cài đặt phiên bản Android Studio nào trước đó thì chọn \verb|I do not have a previsous version of|
 				
-				\verb|Studio or I do not want to import my settings| rồi chọn \verb|OK|.
+					\verb|Studio or I do not want to import my settings| rồi chọn \verb|OK|.
 				
 				\item Được giao diện như hình~\ref{Fig:as-9}: chọn \verb|Next|.
 				
@@ -494,17 +477,17 @@
 							\begin{center}	
 								\subfloat[Chọn Run\label{Fig:setup-genymotion-5}]
 									{\includegraphics[scale=.6]{setup-genymotion-5}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Chọn ngôn ngữ English và chọn OK\label{Fig:setup-genymotion-6}]
 									{\includegraphics[scale=.75]{setup-genymotion-6}}\\
 								\subfloat[Chọn Next\label{Fig:setup-genymotion-7}]
 									{\includegraphics[scale=.5]{setup-genymotion-7}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Chọn Next\label{Fig:setup-genymotion-8}]
 									{\includegraphics[scale=.5]{setup-genymotion-8}}\\
 								\subfloat[Chọn Next\label{Fig:setup-genymotion-9}]
 									{\includegraphics[scale=.5]{setup-genymotion-9}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Chọn Install\label{Fig:setup-genymotion-10}]
 									{\includegraphics[scale=.5]{setup-genymotion-10}}\\								
 							\end{center}
@@ -554,12 +537,12 @@
 							\begin{center}	
 								\subfloat[Chọn Finish\label{Fig:setup-genymotion-17}]
 									{\includegraphics[scale=.5]{setup-genymotion-17}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Giao diện của Oracle VM VirtualBox Manager\label{Fig:setup-genymotion-18}]
 									{\includegraphics[scale=.34]{setup-genymotion-18}}\\
 								\subfloat[Chọn Finish\label{Fig:setup-genymotion-19}]
 									{\includegraphics[scale=.5]{setup-genymotion-19}}
-								\hspace{2cm}
+									\hspace{2cm}
 								\subfloat[Mở Genymotion\label{Fig:setup-genymotion-20}]
 									{\includegraphics[scale=.4]{setup-genymotion-20}}\\				
 							\end{center}
@@ -567,6 +550,7 @@
 							\label{Fig:setup-oracle-windows-complete}
 						\end{figure}
 				\end{itemize}
+				
 			\item \textit{Bước 3:} Tải thiết bị ảo trên \verb|Genymotion| về máy để thực hiện mô phỏng.
 				\begin{itemize}
 					\item Khi mở \verb|Genymotion| lần đầu tiên, xuất hiện thông báo như hình~\ref{Fig:setup-genymotion-21}: chọn \verb|Acept|.
@@ -582,23 +566,22 @@
 							\begin{center}	
 								\subfloat[Chọn Acept\label{Fig:setup-genymotion-21}]
 									{\includegraphics[scale=.5]{setup-genymotion-21}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Chọn Yes\label{Fig:setup-genymotion-22}]
 									{\includegraphics[scale=.73]{setup-genymotion-22}}\\
 								\subfloat[Chọn Sign in\label{Fig:setup-genymotion-23}]
 									{\includegraphics[scale=.3]{setup-genymotion-23}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Nhập thông tin đăng nhập\label{Fig:setup-genymotion-24}]
 									{\includegraphics[scale=.8]{setup-genymotion-24}}\\
 								\subfloat[Danh sách các máy ảo\label{Fig:setup-genymotion-25}]
 									{\includegraphics[scale=.3]{setup-genymotion-25}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Chọn bất kỳ một máy ảo nào và chọn Next\label{Fig:setup-genymotion-26}]
-									{\includegraphics[scale=.3]{setup-genymotion-26}}\\
-									
+									{\includegraphics[scale=.3]{setup-genymotion-26}}\\								
 								\subfloat[Xem thông tin máy ảo và chọn Next\label{Fig:setup-genymotion-27}]
 									{\includegraphics[scale=.3]{setup-genymotion-27}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Quá trình tải máy ảo về máy\label{Fig:setup-genymotion-28}]
 									{\includegraphics[scale=.3]{setup-genymotion-28}}\\								
 							\end{center}
@@ -612,12 +595,12 @@
 							\begin{center}	
 								\subfloat[Chọn máy ảo và chọn Start\label{Fig:setup-genymotion-29}]
 									{\includegraphics[scale=.35]{setup-genymotion-29}}
-								\hspace{.5cm}
+									\hspace{.5cm}
 								\subfloat[Quá trình kiểm tra mở máy ảo\label{Fig:setup-genymotion-30}]
 									{\includegraphics[scale=.73]{setup-genymotion-30}}\\
 								\subfloat[Quá trình khởi động máy ảo\label{Fig:setup-genymotion-31}]
 									{\includegraphics[scale=.5]{setup-genymotion-31}}
-								\hspace{1.5cm}
+									\hspace{1.5cm}
 								\subfloat[Khởi động máy ảo thành công\label{Fig:setup-genymotion-32}]
 									{\includegraphics[scale=.5]{setup-genymotion-32}}\\			
 							\end{center}
@@ -626,15 +609,18 @@
 							\vspace{-.5cm}
 						\end{figure}				
 				\end{itemize}
+
 			\item Sau này muốn mở máy ảo lên sử dụng thì chọn \verb|shortcut| có tên là \verb|Genymotion| (không mở \verb|shortcut| có tên \verb|Genymotion Shell| do chưa cần dùng đến), sẽ có giao diện như hình~\ref{Fig:setup-genymotion-29}:
 				\begin{itemize}
 					\item Muốn khởi động thiết bị thì chọn thiết bị và nhấn vào nút \verb|Start|.
+					
 					\item Muốn thêm thiết bị mới thì nhấn vào nút \verb|Add| và chọn thiết bị mới.
 				\end{itemize}
 		\end{itemize}
+
 %%-------------------------------------------------------------------------------------------------------------------------------------%%
 %%-------------------------------------------------------------------------------------------------------------------------------------%%
-\chapter{Tìm hiểu OpenGL ES 2.0 trên Android}
+\chapter{Tìm hiểu OpenGL ES 2.0 trên Android và Viết ứng dụng}
 \section{Kiểu dữ liệu trong OpenGL ES}
 	Với một số lệnh tham số truyền vào là các kiểu dữ liệu được cho trong bảng~\ref{Tab:kieudulieu-opengles}.
 	\begin{table}[!h]
@@ -673,6 +659,7 @@ Có hai lớp chính để tạo và thực thi đồ họa với OpenGL ES API:
 	\end{itemize}
 	
 	Để sử dụng OpenGL ES 2.0 yêu cầu Android 2.2 (API Level 8) hoặc cao hơn.
+
 \subsection{Khai báo sử dụng OpenGL ES 2.0 trong file Mainfest}
 	Thêm vào file \verb|AndroidMainfest.xml| khai báo sau:	
 		\begin{lstlisting}[language=XML]
@@ -741,17 +728,16 @@ Có hai lớp chính để tạo và thực thi đồ họa với OpenGL ES API:
 \newpage
 \subsection{Nội dung của các file chương trình}
 	\begin{itemize}
+		\item Source code của project được lưu ở địa chỉ: \url{https://github.com/minhdatvnus/nienluan3/blob/master/CreateOpenGLES20.zip}
+		
 		\item Nội dung của file \verb|AndroidMainfest.xml|:
 			\lstinputlisting[language=XML]{AndroidMainfest.xml}
 		
 		\item Nội dung của file \verb|MainActivity.java|: mục~\ref{Sec:MainActivity} (trang~\pageref{Sec:MainActivity}).
-			%\lstinputlisting[language=Java]{MainActivity-1.java}
 		
 		\item Nội dung của file \verb|MyGLSurfaceView.java|: mục~\ref{Sec:GLSurfaceView} (trang~\pageref{Sec:GLSurfaceView}).
-			%\lstinputlisting[language=Java]{MyGLSurfaceView-1.java}
 		
 		\item Nội dung của file \verb|MyGLRenderer.java|: mục~\ref{Sec:Renderer} (trang~\pageref{Sec:Renderer}).
-			%\lstinputlisting[language=Java]{MyGLRenderer-1.java}
 
 		\item Sau khi biên dịch được kết quả như hình \ref{Fig:opengles-1}.
 			\begin{figure}[!h]
@@ -759,11 +745,11 @@ Có hai lớp chính để tạo và thực thi đồ họa với OpenGL ES API:
 					\includegraphics[scale=.6]{images/opengles-1.png}
 				\end{center}
 				\caption{Sử dụng OpenGL ES 2.0 trên Android} \label{Fig:opengles-1}
-			\end{figure}			
+			\end{figure}						
 	\end{itemize}
 
 \newpage	
-\section{Vẽ đối tượng hình học cơ bản}
+\section{Viết ứng dụng vẽ một số đối tượng hình học}
 	Để vẽ các đối tượng hình học cơ bản thực hiện theo 2 bước:
 		\begin{itemize}
 			\item \emph{Bước 1:} Định nghĩa các \verb|shapes|.
@@ -773,7 +759,8 @@ Có hai lớp chính để tạo và thực thi đồ họa với OpenGL ES API:
 			\item[$\ast$] Các đối tượng này được định nghĩa trên một lớp riêng.
 		\end{itemize}
 
-\subsection{Định nghĩa đối tượng là một tam giác}
+\subsection{Vẽ đối tượng là tam giác}
+\subsubsection{Định nghĩa tam giác}
 	\begin{itemize}
 		\item Mỗi đỉnh của tam giác được xác định bởi tọa độ: \verb|(x, y, z)|.
 		\item Đối tượng được định nghĩa như bên dưới (file \verb|Triangle.java|):
@@ -812,7 +799,7 @@ public class Triangle {
 			\end{lstlisting}
 	\end{itemize}
 	
-\subsection{Vẽ đối tượng là một tam giác}
+\subsubsection{Vẽ đối tượng là tam giác}
 	\begin{itemize}
 		\item Trong lớp \verb|Renderer|, khai báo và định nghĩa thêm các phần sau (bước khởi tạo các \verb|shapes| trong phương thức \verb|onSurfaceCreated|).
 			\begin{lstlisting}[language=Java]
@@ -849,7 +836,6 @@ public class Triangle {
         "void main() {" +
         "  gl_FragColor = vColor;" +
         "}";
-
     ...
 }						
 					\end{lstlisting}
@@ -942,32 +928,142 @@ public void draw() {
 		
 		\item Nội dung của các file chương trình:
 			\begin{itemize}
+				\item Source code của project được lưu ở địa chỉ:
+				
+					\url{https://github.com/minhdatvnus/nienluan3/blob/master/TriangleOpenGLES20.zip}
+				
 				\item Nội dung của các file \verb|AndroidMainfest.xml|, \verb|MainActivity.java| và \verb|MyGLSurfaceView.java| không thay đổi.
 				\item Nội dung của file \verb|MyGLRenderer.java|:
 					\lstinputlisting[language=Java]{MyGLRenderer-2.java}					
 				
 				\item Nội dung của file \verb|Triangle.java|:
 					\lstinputlisting[language=Java]{Triangle.java}
-			\end{itemize}
+			\end{itemize}			
 
-\newpage		
+		\newpage
 		\item Sau khi biên dịch được kết quả như hình \ref{Fig:opengles-2}.
 				\begin{figure}[!h]
 					\begin{center}
 						\includegraphics[scale=.6]{images/opengles-2.png}
 					\end{center}
 					\caption{Sử dụng OpenGL ES 2.0 vẽ đối tượng là một tam giác} \label{Fig:opengles-2}
-				\end{figure}
+				\end{figure}						
 	\end{itemize}
 
+\subsection{Vẽ đối tượng là khối lập phương}
+	\begin{enumerate}[{\it a.}]
+		\item Xoay khối lập phương khi chạm vào:
+			\begin{itemize}
+				\item Source code của project được lưu ở địa chỉ: 
+				
+					\url{https://github.com/minhdatvnus/nienluan3/blob/master/CubeOpenGLES20.zip}
+				
+				\item Nội dung của các file chương trình:
+					\begin{itemize}
+						\item Nội dung của các file \verb|AndroidMainfest.xml|:
+							\lstinputlisting[language=XML]{AndroidManifest-Cube.xml}
+			
+						\item Nội dung của file \verb|MainActivity.java|:
+							\lstinputlisting[language=Java]{MainActivity-Cube.java}
+		
+						\item Nội dung của file \verb|CubeGLSurfaceView.java|:
+							\lstinputlisting[language=Java]{CubeGLSurfaceView.java}
+					\end{itemize}
+		
+				%\newpage
+				\item Kết quả khi chạy chương trình: các mặt của khối lập phương được thể hiện trên hình~\ref{Fig:opengles-cube}.
+					\begin{figure}[!h]
+						\begin{center}
+							\includegraphics[scale=.6]{images/opengles-cube-1.png}
+							\hspace{.5cm}
+							\includegraphics[scale=.6]{images/opengles-cube-2.png} 
+						\end{center}
+						\caption{Vẽ và xoay hình lập phương sử dụng OpenGL ES 2.0 trên Android}
+						\label{Fig:opengles-cube}
+					\end{figure}								 
+			\end{itemize}
+		
+		\item \textit{Tự động xoay khối lập phương:}
+			Nội dung của các file chương trình:
+					\begin{itemize}
+						\item Source code của project được lưu ở địa chỉ: 
+				
+				\url{https://github.com/minhdatvnus/nienluan3/blob/master/CubeRotateOpenGLES20.zip}
+				
+						\item Nội dung của các file \verb|AndroidMainfest.xml|:
+							\lstinputlisting[language=XML]{AndroidManifest-Cube-Rotate.xml}
+			
+						\item Nội dung của file \verb|MainActivity.java|:
+							\lstinputlisting[language=Java]{MainActivity-Cube-Rotate.java}
+		
+						\item Nội dung của file \verb|CubeRotateGLSurfaceView.java|:
+							\lstinputlisting[language=Java]{CubeRotateGLSurfaceView.java}
+							
+						\item Nội dung của file \verb|Cube.java|
+							\lstinputlisting[language=Java]{Cube-Rotate.java}
+					\end{itemize}
+					
+		\newpage			
+		\begin{itemize}
+			\item Kết quả khi chạy chương trình: các mặt của khối lập phương tự động xoay, được thể hiện trên hình~\ref{Fig:opengles-cube-rotate}.
+				\begin{figure}[!h]
+					\begin{center}
+						\includegraphics[scale=.6]{images/opengles-cube-3.png}
+						\hspace{.5cm}
+						\includegraphics[scale=.6]{images/opengles-cube-4.png}
+					\end{center}
+					\caption{Tự động xoay khối lập phương sử dụng OpenGL trên Android}
+					\label{Fig:opengles-cube-rotate}
+				\end{figure}							 
+			\end{itemize}
+	\end{enumerate}
+	
+\subsection{Vẽ đối tượng là khối cầu}
+	Nội dung của các file chương trình:
+		\begin{itemize}
+			\item Source code của project được lưu ở địa chỉ: \url{https://github.com/minhdatvnus/nienluan3/blob/master/CircleOpenGLES20.zip}
+			
+			\item Nội dung của các file \verb|AndroidMainfest.xml|:
+				\lstinputlisting[language=XML]{AndroidManifest-Circle.xml}
+			
+			\item Nội dung của file \verb|MainActivity.java|:
+				\lstinputlisting[language=Java]{MainActivity-Circle.java}
+		
+			\item Nội dung của file \verb|CircleOpenGLSurfaceView.java|:
+				\lstinputlisting[language=Java]{CircleOpenGLSurfaceView.java}
+
+			\item Nội dung của file \verb|CircleRenderer.java|:
+				\lstinputlisting[language=Java]{CircleRenderer.java}
+									
+			\item Nội dung của file \verb|Sphere.java|:
+				\lstinputlisting[language=Java]{Sphere.java}					
+		\end{itemize}
+		
+	\newpage
+	\begin{itemize}	
+		\item Kết quả khi chạy chương trình: các mặt của khối lập phương tự động xoay, được thể hiện trên hình~\ref{Fig:opengles-circle}.
+			\begin{figure}[!h]
+				\begin{center}
+					\includegraphics[scale=.6]{images/opengles-circle-1.png}
+					\hspace{.5cm}
+					\includegraphics[scale=.6]{images/opengles-circle-2.png}
+				\end{center}
+				\caption{Xoay khối cầu sử dụng OpenGL trên Android}
+				\label{Fig:opengles-circle}
+			\end{figure}		
+	\end{itemize}
+
+%%-------------------------------------------------------------------------------------------------------------------------------------%%
+%%-------------------------------------------------------------------------------------------------------------------------------------%%
 \chapter{Kết quả}
 \section{Kết quả đạt được}
 	Qua quá trình thực hiện niên luận, nhóm chúng em đạt được một số kết quả sau:
 		\begin{itemize}
-			\item Sử dụng được một số lệnh cơ bản trong thư viện OpenGL ES 2.0 để vẽ các đối tượng cơ bản.
+			\item Sử dụng được một số lệnh cơ bản trong thư viện OpenGL ES 2.0 để vẽ các đối tượng cơ bản 2D và 3D.
 			
 			\item Nhúng các mã lệnh của OpenGL vào chương trình Android.
 		\end{itemize}
+
 \section{Hạn chế}
 	Bên cạnh kết quả đạt được, nhóm chúng em còn gặp một số hạn chế như sau:
 		\begin{itemize}
@@ -975,8 +1071,9 @@ public void draw() {
 			
 			\item Chỉ mới sử dụng được OpenGL ở mức độ cơ bản, chưa khai thác được hết các lệnh trong thư viện.		
 		\end{itemize}
+
 \section{Hướng phát triển}
-Nhóm em có định hướng phát triển đề tài như sau: ``\emph{Xây dựng phần mềm vẽ hình không gian trên điện thoại di động bằng cách sử dụng thư viện OpenGL ES phục vụ mục đích học tập.}''\\
+	Nhóm em có định hướng phát triển đề tài như sau: ``\emph{Xây dựng phần mềm vẽ hình không gian trên điện thoại di động bằng cách sử dụng thư viện OpenGL ES phục vụ mục đích học tập.}''\\
 
 	Ý tưởng xây dựng phần mềm:
 	\begin{itemize}
@@ -991,40 +1088,53 @@ Nhóm em có định hướng phát triển đề tài như sau: ``\emph{Xây d�
 		\item Giải quyết vấn đề liên quan đến vẽ kỹ thuật:
 			\begin{itemize}
 				\item Từ một mô hình của vật thể trong không gian được người dùng vẽ lên, thực hiện phép chiếu theo một tiêu chuẩn cụ thể nào đó, thì chương trình sẽ tự động tìm ra được hình chiếu đứng hình, hình chiếu bằng, hình chiếu cạch của vật thể. 
+
 				\item Hoặc ngược lại từ hình chiếu đứng, hình chiếu bằng, hình chiếu cạnh, chương trình có thể tự động vẽ lại được mô hình của vật thể trong không gian.
 			\end{itemize}				
 	\end{itemize}
 
 \chapter*{Tài liệu tham khảo}
+\vspace*{-10pt}
 \addcontentsline{toc}{chapter}{\textbf{Tài liệu tham khảo}}
 	\begin{enumerate}[{[1]}]
 		\item \textbf{Aaftab Munshi -- Dan Ginsburg -- Dave Shreiner}, OpenGL ES 2.0 Programming Guide -- Chapter 1, Pearson Education, Inc., 2009.
 		
 		\item \href{https://developer.android.com/index.html}{\textbf{Android Developer}}, \href{https://developer.android.com/training/graphics/opengl/index.html}{Displaying Graphics with OpenGL ES}
 		
-		\href{https://developer.android.com/training/graphics/opengl/index.html}{https://developer.android.com/training/graphics/opengl/index.html} (25/11/2016)
+			\href{https://developer.android.com/training/graphics/opengl/index.html}{https://developer.android.com/training/graphics/opengl/index.html} (25/11/2016)
 		
 		\item \href{ehchua@ntu.edu.sg}{\textbf{Chua Hock-Chuan}}, \href{https://www3.ntu.edu.sg/home/ehchua/programming/android/Android_3D.html#zz-2.3}{Android Programming 3D Graphics with OpenGL ES (Including Nehe's Port)}, \href{https://www3.ntu.edu.sg/home/ehchua/programming/index.html}{Programming notes}
 			
-			\href{https://www3.ntu.edu.sg/home/ehchua/programming/android/Android_3D.html#zz-2.3}{https://www3.ntu.edu.sg/home/ehchua/programming/android/Android\_3D.html\#zz-2.3}(22/11/2016)		
+			\href{https://www3.ntu.edu.sg/home/ehchua/programming/android/Android_3D.html#zz-2.3}{https://www3.ntu.edu.sg/home/ehchua/programming/android/Android\_3D.html\#zz-2.3} (22/11/2016)		
 			
 		\item Aksed: \textbf{CoderOfHonor} - Answered: \textbf{Reigertje}, \href{http://stackoverflow.com/questions/17288113/where-is-the-documentation-for-opengl-es-2-0-on-android}{Where is the documentation for OpenGL ES 2.0 on Android?}, \href{http://stackoverflow.com/}{Stackoverflow}.
 		
-		\href{http://stackoverflow.com/questions/17288113/where-is-the-documentation-for-opengl-es-2-0-on-android}{http://stackoverflow.com/questions/17288113/where-is-the-documentation-for-opengl-es-2-0-on-android} (15/11/2016)
+			\href{http://stackoverflow.com/questions/17288113/where-is-the-documentation-for-opengl-es-2-0-on-android}{http://stackoverflow.com/questions/17288113/where-is-the-documentation-for-opengl-es-2-0-on-android} (15/11/2016)
 		
 		\item \textbf{Hoàng Vũ Nam}, \href{http://blog.rikkeisoft.com/opengl-es-voi-android/}{OpenGL ES với Android}, \href{http://blog.rikkeisoft.com/}{Rikkeisoft Blog}
 		
-		\href{http://blog.rikkeisoft.com/opengl-es-voi-android/}{http://blog.rikkeisoft.com/opengl-es-voi-android/} (15/11/2016)
+			\href{http://blog.rikkeisoft.com/opengl-es-voi-android/}{http://blog.rikkeisoft.com/opengl-es-voi-android/} (15/11/2016)
 		
 		\item \textbf{Kevin Brothaler}, OpenGL ES 2 for Android -- A Quick-Start Guide, The Pragmatic Programmers, LLC., 2013.		
 		
 		\item \textbf{Khoa Phạm}, \href{https://www.youtube.com/watch?v=n1iOKgVhMoM&list=PLzrVYRai0riTlWPxOEhi1-2QmvLiw0DCb}{Lập trình Android cơ bản: Cài đặt Android Studio}, \href{https://www.youtube.com}{Youtube}
 		
-		\href{https://www.youtube.com/watch?v=n1iOKgVhMoM&list=PLzrVYRai0riTlWPxOEhi1-2QmvLiw0DCb}{https://www.youtube.com/watch?v=n1iOKgVhMoM\&list=PLzrVYRai0riTlWPxOEhi1-2QmvLiw0DCb} (15/11/2016)			
+			\href{https://www.youtube.com/watch?v=n1iOKgVhMoM&list=PLzrVYRai0riTlWPxOEhi1-2QmvLiw0DCb}{https://www.youtube.com/watch?v=n1iOKgVhMoM\&list=PLzrVYRai0riTlWPxOEhi1-2QmvLiw0DCb} (15/11/2016)			
 
+		\item \textbf{Marco Dinacci}, \href{http://www.intransitione.com/blog/create-a-spinning-cube-with-opengl-es-and-android/}{Create a spinning cube with OpenGL ES and Android}.
+		
+			\href{http://www.intransitione.com/blog/create-a-spinning-cube-with-opengl-es-and-android/}{http://www.intransitione.com/blog/create-a-spinning-cube-with-opengl-es-and-android/} (09/12/2016)
+			
 		\item \href{https://www.khronos.org/opengles/sdk/}{\textbf{OpenGL ES Software Development Kit}}, \href{https://www.khronos.org/opengles/sdk/docs/man/}{OpenGL ES 2.0 Reference Pages}.
 		
-		\href{https://www.khronos.org/opengles/sdk/docs/man/}{https://www.khronos.org/opengles/sdk/docs/man/} (20/11/2016)
-							
+			\href{https://www.khronos.org/opengles/sdk/docs/man/}{https://www.khronos.org/opengles/sdk/docs/man/} (20/11/2016)
+
+		\item \textbf{Programering}, \href{www.programering.com/a/MDM3cjNwATU.html}{Android OpenGL ES draw sphere}.
+		
+			\href{www.programering.com/a/MDM3cjNwATU.html}{www.programering.com/a/MDM3cjNwATU.html} (09/12/2016)
+
+		\item \href{https://gist.github.com/SebastianJay}{\textbf{SebastianJay}}, \href{https://gist.github.com/SebastianJay/3316001#file-glcubeview-java}{Android Sample GLSurfaceView Cube}, GitHub Git.
+
+			\href{https://gist.github.com/SebastianJay/3316001#file-glcubeview-java}{https://gist.github.com/SebastianJay/3316001\#file-glcubeview-java} (09/12/2016)
 	\end{enumerate}
 \end{document}
