@@ -4,7 +4,7 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{times}
 \usepackage{graphicx}
-\graphicspath{{images/android-studio-setup/}{images/jdk-setup/}{images/genymotion-setup/}}
+\graphicspath{{images/android-studio-setup/}{images/jdk-setup/}{images/genymotion-setup/}{images/}}
 \usepackage{subfig}
 \usepackage[unicode,hidelinks=true]{hyperref}
 \usepackage{indentfirst}
@@ -40,7 +40,8 @@
   breaklines=true,
   captionpos=t,
   breakatwhitespace=true,
-  tabsize=1
+  tabsize=1,
+  inputpath=code-java/
 }
 
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc
@@ -74,7 +75,7 @@
 \newpage
 
 \pagenumbering{arabic}
-%%-------------------------------------------------------------------------------------------------------------------------------------%%\\
+%%-------------------------------------------------------------------------------------------------------------------------------------%%
 %%-------------------------------------------------------------------------------------------------------------------------------------%%
 \chapter{Giới thiệu}
 \section{Đặt vấn đề}
@@ -742,7 +743,7 @@ Có hai lớp chính để tạo và thực thi đồ họa với OpenGL ES API:
 		\item Sau khi biên dịch được kết quả như hình \ref{Fig:opengles-1}.
 			\begin{figure}[!h]
 				\begin{center}
-					\includegraphics[scale=.6]{images/opengles-1.png}
+					\includegraphics[scale=.6]{opengles-1.png}
 				\end{center}
 				\caption{Sử dụng OpenGL ES 2.0 trên Android} \label{Fig:opengles-1}
 			\end{figure}						
@@ -944,7 +945,7 @@ public void draw() {
 		\item Sau khi biên dịch được kết quả như hình \ref{Fig:opengles-2}.
 				\begin{figure}[!h]
 					\begin{center}
-						\includegraphics[scale=.6]{images/opengles-2.png}
+						\includegraphics[scale=.6]{opengles-2.png}
 					\end{center}
 					\caption{Sử dụng OpenGL ES 2.0 vẽ đối tượng là một tam giác} \label{Fig:opengles-2}
 				\end{figure}						
@@ -974,9 +975,9 @@ public void draw() {
 				\item Kết quả khi chạy chương trình: các mặt của khối lập phương được thể hiện trên hình~\ref{Fig:opengles-cube}.
 					\begin{figure}[!h]
 						\begin{center}
-							\includegraphics[scale=.6]{images/opengles-cube-1.png}
+							\includegraphics[scale=.6]{opengles-cube-1.png}
 							\hspace{.5cm}
-							\includegraphics[scale=.6]{images/opengles-cube-2.png} 
+							\includegraphics[scale=.6]{opengles-cube-2.png} 
 						\end{center}
 						\caption{Vẽ và xoay hình lập phương sử dụng OpenGL ES 2.0 trên Android}
 						\label{Fig:opengles-cube}
@@ -1008,9 +1009,9 @@ public void draw() {
 			\item Kết quả khi chạy chương trình: các mặt của khối lập phương tự động xoay, được thể hiện trên hình~\ref{Fig:opengles-cube-rotate}.
 				\begin{figure}[!h]
 					\begin{center}
-						\includegraphics[scale=.6]{images/opengles-cube-3.png}
+						\includegraphics[scale=.6]{opengles-cube-3.png}
 						\hspace{.5cm}
-						\includegraphics[scale=.6]{images/opengles-cube-4.png}
+						\includegraphics[scale=.6]{opengles-cube-4.png}
 					\end{center}
 					\caption{Tự động xoay khối lập phương sử dụng OpenGL trên Android}
 					\label{Fig:opengles-cube-rotate}
@@ -1044,9 +1045,9 @@ public void draw() {
 		\item Kết quả khi chạy chương trình: các mặt của khối lập phương tự động xoay, được thể hiện trên hình~\ref{Fig:opengles-circle}.
 			\begin{figure}[!h]
 				\begin{center}
-					\includegraphics[scale=.6]{images/opengles-circle-1.png}
+					\includegraphics[scale=.6]{opengles-circle-1.png}
 					\hspace{.5cm}
-					\includegraphics[scale=.6]{images/opengles-circle-2.png}
+					\includegraphics[scale=.6]{opengles-circle-2.png}
 				\end{center}
 				\caption{Xoay khối cầu sử dụng OpenGL trên Android}
 				\label{Fig:opengles-circle}
